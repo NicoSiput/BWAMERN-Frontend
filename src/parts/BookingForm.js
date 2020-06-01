@@ -112,7 +112,7 @@ class BookingForm extends Component {
         >
           You will pay{" "}
           <span className="text-gray-900">
-            ${itemDetails.price & data.duration} USD
+            ${itemDetails.price * data.duration} USD
           </span>{" "}
           per{" "}
           <span className="text-gray-900">
