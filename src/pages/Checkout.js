@@ -50,7 +50,7 @@ class Checkout extends Component {
     const { checkout } = this.props;
 
     const payload = new FormData();
-    payload.append("firstName2", data.firstname);
+    payload.append("firstName", data.firstname);
     payload.append("lastName", data.lastname);
     payload.append("emailAddress", data.email);
     payload.append("phoneNumber", data.phone);
@@ -62,14 +62,9 @@ class Checkout extends Component {
     payload.append("bankFrom", data.bankName);
     payload.append("image", data.proofPayment[0]);
 
-    this.props
-      .submitBooking(payload)
-      .then(() => {
-        nextStep();
-      })
-      .catch((error) => {
-        console.log(error);
-      });
+    this.props.submitBooking(payload).then(() => {
+      nextStep();
+    });
   };
 
   render() {
